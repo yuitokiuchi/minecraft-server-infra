@@ -19,10 +19,15 @@ resource "aws_ebs_volume" "smp" {
     local.tags,
     {
       Name        = "${var.project_name}-smp-ebs"
-      ServerType  = "SMP"
+      Role        = "SMP"
       Description = "Survival Multi Play server data"
     }
   )
+
+  # Prevent accidental deletion
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 # ============================================
@@ -40,10 +45,15 @@ resource "aws_ebs_volume" "proxy" {
     local.tags,
     {
       Name        = "${var.project_name}-proxy-ebs"
-      ServerType  = "Proxy"
+      Role    = "Proxy"
       Description = "Velocity proxy server data"
     }
   )
+
+  # Prevent accidental deletion
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 # ============================================

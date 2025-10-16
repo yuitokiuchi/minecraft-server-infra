@@ -130,3 +130,10 @@ variable "ebs_encryption_enabled" {
   default     = true
   description = "Enable encryption for EBS volumes"
 }
+
+variable "ebs_deletion_protection" {
+  type        = bool
+  default     = true
+  description = "Enable deletion protection for EBS volumes (prevent_destroy)"
+}
+

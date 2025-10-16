@@ -36,4 +36,5 @@ ebs_proxy_iops       = 3000
 ebs_proxy_throughput = 125
 
 # Common EBS Settings
-ebs_encryption_enabled = false
+ebs_encryption_enabled  = false
+ebs_deletion_protection = true  # Prevent accidental deletion
