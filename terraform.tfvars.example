@@ -18,3 +18,22 @@ common_tags = {
   ManagedBy   = "Terraform"
   CreatedDate = "2025-10-16"
 }
+
+# ============================================
+# EBS Volume Configuration
+# ============================================
+
+# SMP (Survival Multi Play) Server
+ebs_smp_size       = 6
+ebs_smp_type       = "gp3"
+ebs_smp_iops       = 3000
+ebs_smp_throughput = 125
+
+# Proxy (Velocity) Server
+ebs_proxy_size       = 2
+ebs_proxy_type       = "gp3"
+ebs_proxy_iops       = 3000
+ebs_proxy_throughput = 125
+
+# Common EBS Settings
+ebs_encryption_enabled = false

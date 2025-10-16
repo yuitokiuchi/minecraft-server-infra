@@ -69,3 +69,64 @@ variable "common_tags" {
   default     = {}
   description = "Common tags to apply to all resources"
 }
+
+# ============================================
+# EBS Volume Variables
+# ============================================
+
+# SMP (Survival Multi Play) EBS Configuration
+variable "ebs_smp_size" {
+  type        = number
+  default     = 6
+  description = "Size of SMP EBS volume in GB"
+}
+
+variable "ebs_smp_type" {
+  type        = string
+  default     = "gp3"
+  description = "EBS volume type for SMP (gp3, gp2, io1, io2)"
+}
+
+variable "ebs_smp_iops" {
+  type        = number
+  default     = 3000
+  description = "IOPS for SMP EBS volume (gp3: 3000-16000)"
+}
+
+variable "ebs_smp_throughput" {
+  type        = number
+  default     = 125
+  description = "Throughput for SMP EBS volume in MB/s (gp3: 125-1000)"
+}
+
+# Proxy (Velocity) EBS Configuration
+variable "ebs_proxy_size" {
+  type        = number
+  default     = 2
+  description = "Size of Proxy EBS volume in GB"
+}
+
+variable "ebs_proxy_type" {
+  type        = string
+  default     = "gp3"
+  description = "EBS volume type for Proxy (gp3, gp2, io1, io2)"
+}
+
+variable "ebs_proxy_iops" {
+  type        = number
+  default     = 3000
+  description = "IOPS for Proxy EBS volume (gp3: 3000-16000)"
+}
+
+variable "ebs_proxy_throughput" {
+  type        = number
+  default     = 125
+  description = "Throughput for Proxy EBS volume in MB/s (gp3: 125-1000)"
+}
+
+# Common EBS Configuration
+variable "ebs_encryption_enabled" {
+  type        = bool
+  default     = true
+  description = "Enable encryption for EBS volumes"
+}

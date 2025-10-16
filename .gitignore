@@ -26,5 +26,5 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# Ignore lock files (optional - some teams commit this)
-# .terraform.lock.hcl
+# Include lock files in version control
+# .terraform.lock.hcl should be committed to ensure reproducibility
